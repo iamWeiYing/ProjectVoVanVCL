@@ -100,7 +100,7 @@ const App = () => {
                 </Form.Item>
 
                 <Form.Item label="TimePicker" name="timePicker">
-                    <TimePicker />
+                    <TimePicker use12Hours format="h:mm a" />
                 </Form.Item>
 
                 <Form.Item label="TextArea">
