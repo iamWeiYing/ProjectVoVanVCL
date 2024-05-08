@@ -111,7 +111,7 @@ const App = () => {
                     <Switch />
                 </Form.Item>
 
-                <Form.Item label="Upload" valuePropName="fileList" getValueFromEvent={normFile}>
+                <Form.Item label="Upload" valuePropName="fileList" getValueFromEvent={normFile} name="file">
                     <Upload action="/upload.do" listType="picture-card">
                         <button
                             style={{
