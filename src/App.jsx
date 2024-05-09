@@ -55,9 +55,11 @@ const App = () => {
                     <Input />
                 </Form.Item>
 
-                <Form.Item label="Select" name="select">
+                <Form.Item label="Select" name="selectOption">
                     <Select>
-                        <Select.Option value="demo">Demo</Select.Option>
+                        <Select.Option value="option1">Option 1</Select.Option>
+                        <Select.Option value="option2">Option 2</Select.Option>
+                        <Select.Option value="option3">Option 3</Select.Option>
                     </Select>
                 </Form.Item>
 
