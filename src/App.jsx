@@ -1,30 +1,9 @@
-import React, { useState } from 'react';
-import { PlusOutlined } from '@ant-design/icons';
+import React from 'react';
 import {
-    Button,
-    Cascader,
     Checkbox,
-    ColorPicker,
-    DatePicker,
-    TimePicker,
     Form,
-    Input,
-    InputNumber,
-    Radio,
-    Select,
-    Slider,
-    Switch,
-    TreeSelect,
-    Upload,
+    Input
 } from 'antd';
-const { RangePicker } = DatePicker;
-const { TextArea } = Input;
-const normFile = (e) => {
-    if (Array.isArray(e)) {
-        return e;
-    }
-    return e?.fileList;
-};
 const App = () => {
     return (
         <>
@@ -44,108 +23,48 @@ const App = () => {
                     <Checkbox>Checkbox</Checkbox>
                 </Form.Item>
 
-                <Form.Item label="Radio" name="radio">
-                    <Radio.Group>
-                        <Radio value="apple" name="apple"> Apple </Radio>
-                        <Radio value="pear" name="pear"> Pear </Radio>
-                    </Radio.Group>
-                </Form.Item>
-
                 <Form.Item label="Input" name="input">
                     <Input />
                 </Form.Item>
-
-                <Form.Item label="Select" name="selectOption">
-                    <Select>
-                        <Select.Option value="option1">Option 1</Select.Option>
-                        <Select.Option value="option2">Option 2</Select.Option>
-                        <Select.Option value="option3">Option 3</Select.Option>
-                    </Select>
-                </Form.Item>
-
-                <Form.Item label="TreeSelect">
-                    <TreeSelect
-                        treeData={[
-                            {
-                                title: 'Light',
-                                value: 'light',
-                                children: [
-                                    {
-                                        title: 'Bamboo',
-                                        value: 'bamboo',
-                                    },
-                                ],
-                            },
-                        ]}
-                    />
-                </Form.Item>
-
-                <Form.Item label="Cascader">
-                    <Cascader
-                        options={[
-                            {
-                                value: 'zhejiang',
-                                label: 'Zhejiang',
-                                children: [
-                                    {
-                                        value: 'hangzhou',
-                                        label: 'Hangzhou',
-                                    },
-                                ],
-                            },
-                        ]}
-                    />
-                </Form.Item>
-
-                <Form.Item label="DatePicker" name="datePicker">
-                    <DatePicker />
-                </Form.Item>
-
-                <Form.Item label="TimePicker" name="timePicker">
-                    <TimePicker use12Hours format="hh:mm:A" />
-                </Form.Item>
-
-                <Form.Item label="TextArea">
-                    <TextArea rows={4} />
-                </Form.Item>
-
-                <Form.Item label="Switch" valuePropName="checked">
-                    <Switch />
-                </Form.Item>
-
-                <Form.Item label="Upload" valuePropName="fileList" getValueFromEvent={normFile} name="file">
-                    <Upload action="/upload.do" listType="picture-card">
-                        <button
-                            style={{
-                                border: 0,
-                                background: 'none',
-                            }}
-                            type="button"
-                        >
-                            <PlusOutlined />
-                            <div
-                                style={{
-                                    marginTop: 8,
-                                }}
-                            >
-                                Upload
-                            </div>
-                        </button>
-                    </Upload>
-                </Form.Item>
-
-                <Form.Item label="Button">
-                    <Button>Button</Button>
-                </Form.Item>
-
-                <Form.Item label="Slider">
-                    <Slider />
-                </Form.Item>
-
-                <Form.Item label="ColorPicker">
-                    <ColorPicker />
-                </Form.Item>
             </Form>
+            <div className="max-w-md mx-auto mt-8 w-full h-350 ">
+                <form
+                    className=" shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-grey-500"
+                >
+                    <div className="mb-4">
+                        <label
+                            className="block text-gray-700 text-sm font-bold mb-2"
+                            htmlFor="name"
+                        >
+                            Name
+                        </label>
+                        <input
+                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="input"
+                            type="text"
+                            placeholder="Enter your name"
+                            name="name"
+                        />
+                    </div>
+                    
+                    
+                    <div className="mb-4">
+                        <label
+                            className="block text-gray-700 text-sm font-bold mb-2"
+                            htmlFor="checkbox"
+                        >
+                            Checkbox
+                        </label>
+                        <input
+                            className="mr-2 leading-tight"
+                            id="checkbox"
+                            type="checkbox"
+                            name="checkbox"
+                        />
+                    </div>
+                    
+                </form>
+            </div>
         </>
     );
 };
